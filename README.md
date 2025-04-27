@@ -2,15 +2,6 @@
 
 denaurlen task
 
-## Getting Started
+![WhatsApp Image 2025-04-26 at 11 48 59_ae1d4fa0](https://github.com/user-attachments/assets/c612c540-edd4-4cd8-af40-8b380e09b973)
+![WhatsApp Image 2025-04-26 at 11 48 04_399ab501](https://github.com/user-attachments/assets/29b389b3-170b-46e7-b189-c138d303e6f8)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
