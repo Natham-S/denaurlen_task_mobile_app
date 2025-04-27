@@ -1,16 +1,20 @@
+import 'package:denaurlen_task/widgets/coinValidateScreen/LeadUserInfo.dart';
+import 'package:denaurlen_task/widgets/coinValidateScreen/PostDescription.dart';
 import 'package:denaurlen_task/widgets/coinValidateScreen/PostInteractions.dart';
+import 'package:denaurlen_task/widgets/coinValidateScreen/PostUserInfo.dart';
 import 'package:flutter/material.dart';
 
 import '../Services/ApiService.dart';
 import '../models/PostData.dart';
 import '../widgets/coinValidateScreen/CountdownTimerWidget.dart';
+import '../widgets/coinValidateScreen/GrossCoins.dart';
 import '../widgets/coinValidateScreen/LeadButton.dart';
 import '../widgets/coinValidateScreen/LogoutBtn.dart';
 
 
 class CoinValuationScreen extends StatefulWidget {
   final String username;
-  const CoinValuationScreen({Key? key, required this.username}) : super(key: key);
+  const CoinValuationScreen({super.key, required this.username});
 
   @override
   _CoinValuationScreenState createState() => _CoinValuationScreenState();
@@ -18,7 +22,7 @@ class CoinValuationScreen extends StatefulWidget {
 
 class _CoinValuationScreenState extends State<CoinValuationScreen> {
   PostData? postData;
-  bool isLoading = false; 
+  bool isLoading = false;
 
   @override
   void initState() {
@@ -73,11 +77,14 @@ class _CoinValuationScreenState extends State<CoinValuationScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
     if (postData == null) {
       return Scaffold(
-        body: const Center(child: Text("There is no post Data, try again")),
+        body: const Center(child: Column(
+          children: [
+            CircularProgressIndicator(),
+            Text("There is no post Data, try again"),
+          ],
+        )),
       );
     }
 
@@ -94,40 +101,10 @@ class _CoinValuationScreenState extends State<CoinValuationScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+                      PostUserInfo(username: widget.username),
                       Row(
                         children: [
-                          CircleAvatar(
-                            backgroundImage: AssetImage("assets/images/user-profile.jpg"),
-                          ),
-                          const SizedBox(width: 6),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(widget.username, style: theme.textTheme.titleMedium?.copyWith(
-                                  color: Theme.of(context).colorScheme.secondary)),
-                              const SizedBox(height: 2),
-                              Text("6 June 2021, 12:10 pm", style: theme.textTheme.labelSmall?.copyWith(
-                                  color: Theme.of(context).colorScheme.onSecondary)),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                children: [
-                                  Image.asset('assets/icons/coins.png'),
-                                  Text(postData!.grossCoins.toString(), style: theme.textTheme.bodyLarge?.copyWith(
-                                      color: Theme.of(context).colorScheme.secondary)),
-                                ],
-                              ),
-                              Text("Gross Coins", style: theme.textTheme.headlineSmall?.copyWith(
-                                  color: Theme.of(context).colorScheme.onSecondary)),
-                            ],
-                          ),
+                          GrossCoins(grossCoins: postData!.grossCoins),
                           const SizedBox(width: 4),
                           Image.asset('assets/icons/grow.png'),
                           const SizedBox(width: 4),
@@ -151,10 +128,7 @@ class _CoinValuationScreenState extends State<CoinValuationScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       PostInteractions(),
-                      LeadButton(
-                        isLoading: isLoading,
-                        onPressed: handleLeadButton,
-                      ),
+                      LeadButton(isLoading: isLoading, onPressed: handleLeadButton),
                     ],
                   ),
                   const SizedBox(height: 8),
@@ -163,46 +137,9 @@ class _CoinValuationScreenState extends State<CoinValuationScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.all(2),
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              border: Border.all(
-                                color: Colors.grey,
-                                width: 1,
-                              ),
-                            ),
-                            child: CircleAvatar(
-                              backgroundImage: AssetImage("assets/images/lead-profile.jpg"),
-                            ),
-                          ),
-                          const SizedBox(width: 8),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                children: [
-                                  Image.asset('assets/icons/coins.png'),
-                                  const SizedBox(width: 4),
-                                  Text(postData!.netCoins.toString(), style: theme.textTheme.headlineMedium?.copyWith(
-                                      color: Theme.of(context).colorScheme.secondary)),
-                                  const SizedBox(width: 4),
-                                  Image.asset('assets/icons/grow.png'),
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  Text(postData!.leadUser, style: theme.textTheme.bodyLarge?.copyWith(
-                                      color: Theme.of(context).colorScheme.secondary)),
-                                  Text(" in Lead", style: theme.textTheme.bodyLarge?.copyWith(
-                                      color: Theme.of(context).colorScheme.onSecondary)),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ],
+                      LeadUserInfo(
+                        netCoins: postData!.netCoins,
+                        leadUser: postData!.leadUser,
                       ),
                       CountdownTimerWidget(
                         initialDuration: calculateRemainingTime(postData!.createdAt),
@@ -210,13 +147,7 @@ class _CoinValuationScreenState extends State<CoinValuationScreen> {
                     ],
                   ),
                   const SizedBox(height: 12),
-                  Text(
-                    "@${widget.username} "
-                        "If everything seems under control, you're going fast enough. Be Fast, Be Curious..! 😎",
-                    style: theme.textTheme.bodySmall?.copyWith(
-                      color: Theme.of(context).colorScheme.secondary,
-                    ),
-                  ),
+                  PostDescription(username: widget.username)
                 ],
               ),
             ),
