@@ -9,7 +9,7 @@ class CredentialsSubmitBtn extends StatelessWidget {
   final TextEditingController nameController;
   final TextEditingController usernameController;
 
-  CredentialsSubmitBtn({
+  const CredentialsSubmitBtn({super.key,
     required this.nameController,
     required this.usernameController,
   });

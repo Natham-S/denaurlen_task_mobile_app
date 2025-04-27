@@ -1,11 +1,7 @@
-import 'package:denaurlen_task/ui/CustomTheme.dart';
 import 'package:flutter/material.dart';
 
-import '../Services/ApiService.dart';
-import '../models/Credentials.dart';
 import '../widgets/authScreen/CredentialsInputField.dart';
 import '../widgets/authScreen/CredentialsSubmitBtn.dart';
-import 'CoinValuationScreen.dart';
 
 class UserAuthScreen extends StatelessWidget {
   const UserAuthScreen({super.key});
