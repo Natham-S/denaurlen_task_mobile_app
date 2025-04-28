@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../utils/AppStrings.dart';
 import '../../screens/UserAuthScreen.dart';
 
 class LogOutBtn extends StatelessWidget{
@@ -17,7 +18,7 @@ class LogOutBtn extends StatelessWidget{
               children: [
                 ListTile(
                   leading: const Icon(Icons.logout),
-                  title: const Text('Logout'),
+                  title: const Text(USER_LOGOUT),
                   onTap: () {
                     Navigator.pop(context);
                     Navigator.pushReplacement(

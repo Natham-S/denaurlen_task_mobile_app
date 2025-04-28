@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../models/Credentials.dart';
 import '../../../network/ApiService.dart';
+import '../../../utils/AppStrings.dart';
 import '../../screens/CoinValuationScreen.dart';
 
 
@@ -26,7 +27,7 @@ class CredentialsSubmitBtn extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: 12.0),
         ),
         child: Text(
-          "Submit",
+          USER_SUBMIT,
           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
             color: Theme.of(context).colorScheme.onPrimary,
           ),

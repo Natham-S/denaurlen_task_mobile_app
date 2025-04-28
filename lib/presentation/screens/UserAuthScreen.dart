@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../utils/AppStrings.dart';
 import '../widgets/authScreen/CredentialsInputField.dart';
 import '../widgets/authScreen/CredentialsSubmitBtn.dart';
 
@@ -18,7 +19,8 @@ class UserAuthScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Enter the credentials",
+            Text(
+              ENTER_CRED,
               style: Theme.of(context).textTheme.titleLarge,
               textAlign: TextAlign.start,
             ),
@@ -26,14 +28,14 @@ class UserAuthScreen extends StatelessWidget {
             SizedBox(height: 38),
 
             CredentialsInputField(
-              labelTextTitle: 'Enter your Name',
+              labelTextTitle: USER_NAME,
               controller: nameController,
             ),
 
             SizedBox(height: 18),
 
             CredentialsInputField(
-              labelTextTitle: 'Enter your Username',
+              labelTextTitle: USER_USERNAME,
               controller: usernameController,
             ),
 

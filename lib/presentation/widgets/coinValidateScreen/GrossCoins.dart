@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../utils/AppStrings.dart';
+
 class GrossCoins extends StatelessWidget{
   final int grossCoins;
 
@@ -25,7 +27,7 @@ class GrossCoins extends StatelessWidget{
           ],
         ),
         Text(
-          "Gross Coins",
+          GROSS_COINS,
           style: theme.textTheme.headlineSmall?.copyWith(
             color: Theme.of(context).colorScheme.onSecondary,
           ),

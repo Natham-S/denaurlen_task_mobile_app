@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../utils/AppStrings.dart';
+
 
 class LeadButton extends StatelessWidget {
   final bool isLoading;
@@ -32,7 +34,7 @@ class LeadButton extends StatelessWidget {
           : Row(
         children: [
           Text(
-            "Lead + 100",
+            LEAD_BTN,
             style: theme.textTheme.bodyLarge?.copyWith(
               color: Theme.of(context).colorScheme.onPrimary,
             ),

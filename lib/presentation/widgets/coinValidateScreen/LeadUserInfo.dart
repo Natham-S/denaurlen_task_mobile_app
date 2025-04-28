@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../utils/AppStrings.dart';
+
 class LeadUserInfo extends StatelessWidget{
   final int netCoins;
   final String leadUser;
@@ -56,7 +58,7 @@ class LeadUserInfo extends StatelessWidget{
                   ),
                 ),
                 Text(
-                  " in Lead",
+                  IN_LEAD,
                   style: theme.textTheme.bodyLarge?.copyWith(
                     color: Theme.of(context).colorScheme.onSecondary,
                   ),
