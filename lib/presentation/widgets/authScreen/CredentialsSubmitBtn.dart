@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../../Services/ApiService.dart';
-import '../../models/Credentials.dart';
+import '../../../models/Credentials.dart';
+import '../../../network/ApiService.dart';
 import '../../screens/CoinValuationScreen.dart';
 
 

@@ -1,15 +1,16 @@
-import 'package:denaurlen_task/widgets/coinValidateScreen/LeadUserInfo.dart';
-import 'package:denaurlen_task/widgets/coinValidateScreen/PostDescription.dart';
-import 'package:denaurlen_task/widgets/coinValidateScreen/PostInteractions.dart';
-import 'package:denaurlen_task/widgets/coinValidateScreen/PostUserInfo.dart';
 import 'package:flutter/material.dart';
 
-import '../Services/ApiService.dart';
-import '../models/PostData.dart';
+import '../../models/PostData.dart';
+import '../../network/ApiService.dart';
+
 import '../widgets/coinValidateScreen/CountdownTimerWidget.dart';
 import '../widgets/coinValidateScreen/GrossCoins.dart';
 import '../widgets/coinValidateScreen/LeadButton.dart';
+import '../widgets/coinValidateScreen/LeadUserInfo.dart';
 import '../widgets/coinValidateScreen/LogoutBtn.dart';
+import '../widgets/coinValidateScreen/PostDescription.dart';
+import '../widgets/coinValidateScreen/PostInteractions.dart';
+import '../widgets/coinValidateScreen/PostUserInfo.dart';
 
 
 class CoinValuationScreen extends StatefulWidget {

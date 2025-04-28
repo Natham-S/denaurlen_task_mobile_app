@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../ui/CustomColorScheme.dart';
-import '../../ui/CustomTheme.dart';
+import '../../../ui/CustomColorScheme.dart';
+import '../../../ui/CustomTheme.dart';
+
 
 class CredentialsInputField extends StatelessWidget {
   final String labelTextTitle;

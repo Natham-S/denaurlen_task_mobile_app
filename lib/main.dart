@@ -1,5 +1,4 @@
-import 'package:denaurlen_task/screens/CoinValuationScreen.dart';
-import 'package:denaurlen_task/screens/UserAuthScreen.dart';
+import 'package:denaurlen_task/presentation/screens/UserAuthScreen.dart';
 import 'package:denaurlen_task/ui/CustomTheme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
